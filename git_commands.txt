@@ -1,0 +1,29 @@
+git clone
+    git clone <https://link-com-o-nome-do-repositório>
+    comando para baixar o código-fonte existente de um repositório remoto
+
+git add
+    git add .
+    git add <nome-do-arquivo>
+    adiciona uma alteração no diretório ativo à área de staging
+
+git commit 
+    git commit -m "<mensagem>"
+    O comando git commit captura um instantâneo das mudanças preparadas
+    do projeto no momento. Os instantâneos com commit podem ser considerados
+    versões "seguras" de um projeto, o Git nunca os altera, a menos que você 
+    peça a ele.
+
+git push
+    git push origin <branch>
+    é usado para enviar o conteúdo do repositório local para um repositório remoto
+
+git branch
+    git branch <nome-da-branch>
+    o comando criará uma branch em seu local de trabalho. Para fazer o push
+    da nova branch para o repositório remoto:
+        git push -u <local-remoto> <nome-da-branch>
+
+git checkout
+    git checkout <nome-da-branch>
+    o comando é utilizado para trocar de uma branch para outra.
