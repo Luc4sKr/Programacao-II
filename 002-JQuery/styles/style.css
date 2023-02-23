@@ -1,0 +1,16 @@
+* {
+    padding: 0px;
+    margin: 0px;
+
+    background-color: aqua;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    display: none;
+}
