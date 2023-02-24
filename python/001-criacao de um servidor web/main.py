@@ -1,7 +1,5 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template
 import json
-
-from models.pessoa import Pessoa
 
 app = Flask(__name__)
 
@@ -9,16 +7,6 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     return render_template("index.html")
-
-@app.route("/listar_pessoas")
-def listar_pessoas():
-    lista = list()
-
-    p1 = Pessoa(id=1, nome="Lucas", idade=17)
-
-    lista.append(p1.json())
-
-    return jsonify(lista)
 
 
 if __name__ == "__main__":
