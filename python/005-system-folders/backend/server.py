@@ -1,13 +1,12 @@
 from config.configs import *
-from models.person import Person
 
 from routes import *
 
 with app.app_context():
-    CORS(app) # provendo o CORS ao sistema
+    CORS(app)
    
-    @app.route("/") # rota padrão
-    def ola():
+    @app.route("/")
+    def index():
         return "backend operante"
 
     app.run(debug=True) 

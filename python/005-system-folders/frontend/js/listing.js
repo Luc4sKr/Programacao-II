@@ -1,17 +1,14 @@
-// importação de um arquivo javascript :-)
 import { findError } from './utils.js';
 
-// proteção para não executar o javascript antes do documento estar pronto
-$(function () {
 
-    // chamada ao backend
+$(document).ready(function () {
     var rota = 'http://localhost:5000/list_person';
 
     // chamada ajax
     var acao = $.ajax({
         url: rota,
-        //method: 'GET',
-        dataType: 'json', // os dados são recebidos no formato json,
+        method: 'GET',
+        dataType: 'json',
     });
 
     // se a chamada der certo
@@ -21,12 +18,11 @@ $(function () {
             if (retorno.resultado == "ok") {
                 // percorrer a lista de pessoas retornadas; 
                 for (var p of retorno.detalhes) { //p vai valer cada pessoa do vetor de pessoas
-                    // https://stackoverflow.com/questions/8069663/avoiding-html-in-string-html-in-a-jquery-script
                     // criar um parágrafo
                     var paragrafo = $("<p>");
                     // informar o HTML deste parágrafo
                     // observe o apóstrofo inclinado, para interpretar as variáveis
-                    paragrafo.html(`==> ${p.nome}, ${p.email}`);
+                    paragrafo.html(`==> ${p.name}, ${p.email}`);
                     // adicionar o parágrafo criado na div
                     $('#listagem').append(paragrafo);
                 }

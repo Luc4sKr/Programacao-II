@@ -9,7 +9,7 @@ class Person:
 
     def json(self):
         return {
-            "nome" : self.nome,
+            "name" : self.name,
             "email" : self.email,
-            "telefone" : self.telefone 
+            "phone" : self.phone 
         }

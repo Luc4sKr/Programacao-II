@@ -11,6 +11,7 @@ def list_person():
 
         # retornar a lista de pessoas json, com resultado ok
         resp = jsonify(myjson)
-        return resp
     except Exception as e:
         resp = jsonify({"result": "error", "details": str(e)})
+
+    return resp

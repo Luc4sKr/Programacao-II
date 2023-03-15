@@ -4,27 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Form</title>
 </head>
 <body>
-    <a href="listing.html">Listar</a> | <b>Incluir</b>
-    <hr>
-    <form id="meuformularioquerido" onsubmit="return false;">
-        <p>
-            Name: <input type="text" id="name" name="name" value="Maria Oliveira">
-        </p>
-        <p>
-            Email: <input type="text" id="email" name="email" value="maliv@gmail.com">
-        </p>
-        <p>
-            Phone: <input type="text" id="phone" name="phone" value="47 91234 6789">
-        </p>
-        <button id="btIncluir">
-            Incluir!!
-        </button>
-    </form>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="form.html">Form</a>
+                </li>
+                <li>
+                    <a href="list.html">List</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- inclusão dos scripts -->
+    <main>
+        <form id="form">
+            <div class="form-div">
+                <label for="name">Name</label>
+                <input type="text" id="name">
+            </div>
+            <div class="form-div">
+                <label for="email">Email</label>
+                <input type="email" id="email">
+            </div>
+            <div class="form-div">
+                <label for="phone">Phone</label>
+                <input type="text" id="phone">
+            </div>
+            
+            <div class="button-container">
+                <button id="btn-enviar">Enviar</button>
+            </div>
+        </form>
+    </main>
+
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <script type="module" src="js/include.js"></script>
 

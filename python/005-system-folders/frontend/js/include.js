@@ -1,25 +1,26 @@
-// importação de um arquivo javascript :-)
 import { findError } from './utils.js';
 
 // proteção para não executar o javascript antes do documento estar pronto
-$(function () {
+$(document).ready(function () {
 
-    // conecta o botão de enviar à ação javascript/jquery
-    $(document).on("click", "#btIncluir", function () {
+    $(document).on("click", "#btn-enviar", function (e) {
+        e.preventDefault();
 
         // rota que vai ser chamada no backend
         var rota = 'http://localhost:5000/include_person';
 
-        var vetor_dados = $("#meuformularioquerido").serializeArray();
+        const name = $("#name").val()
+        const email = $("#email").val()
+        const phone = $("#phone").val()
 
-        // converter para {chave:valor, chave:valor, ...}
-        var chave_valor = {};
-        for (var i = 0; i < vetor_dados.length; i++) {
-            chave_valor[vetor_dados[i]['name']] = vetor_dados[i]['value'];
+        var newData = {
+            "name": name,
+            "email": email,
+            "phone": phone
         }
 
         // convertendo para JSON!!
-        var dados_json = JSON.stringify(chave_valor);
+        var dados_json = JSON.stringify(newData);
 
         // chamada ajax
         var acao = $.ajax({
@@ -34,7 +35,7 @@ $(function () {
         acao.done(function (retorno) {
             try {
                 if (retorno.resultado == "ok") {
-                    alert("tudo cert :-)");
+                    alert("tudo certo :-)");
                 } else {
                     alert("Deu algum erro :-( " + retorno.detalhes);
                 }
@@ -50,6 +51,6 @@ $(function () {
             alert("Erro na chamada ajax: " + mensagem);
         });
 
-    }); // fim click btIncluir
+    });
 
 });
