@@ -16,15 +16,22 @@ $(document).ready(function () {
         // faz uma proteção contra erros
         try {
             if (retorno.resultado == "ok") {
-                // percorrer a lista de pessoas retornadas; 
-                for (var p of retorno.detalhes) { //p vai valer cada pessoa do vetor de pessoas
-                    // criar um parágrafo
-                    var paragrafo = $("<p>");
-                    // informar o HTML deste parágrafo
-                    // observe o apóstrofo inclinado, para interpretar as variáveis
-                    paragrafo.html(`==> ${p.name}, ${p.email}`);
-                    // adicionar o parágrafo criado na div
-                    $('#listagem').append(paragrafo);
+                for (var p of retorno.detalhes) {
+                    let tr = document.createElement("tr");
+
+                    let name = document.createElement("th");
+                    let email = document.createElement("th");
+                    let phone = document.createElement("th")
+
+                    $(name).text(p.name);
+                    $(email).text(p.email);
+                    $(phone).text(p.phone);
+
+                    $(tr).append(name);
+                    $(tr).append(email);
+                    $(tr).append(phone);
+
+                    $("#listagem").append(tr);
                 }
             } else {
                 alert("Erro informado pelo backend: " + retorno.detalhes);
@@ -35,7 +42,6 @@ $(document).ready(function () {
         }
     });
 
-    // se a chamada der erro
     acao.fail(function (jqXHR, textStatus) {
         mensagem = findError(jqXHR, textStatus, rota);
         alert("Erro na chamada ajax: " + mensagem);
