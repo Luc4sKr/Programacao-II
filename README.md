@@ -3,9 +3,10 @@
 
 ### DataBase
 
-db                  | Projeto       | Descrição
----------------     |---------------|---------------
-[001](db/001-basic/)| basic         | exemplo básico de como usar classes persistentes com sqlite
+db                        | Projeto       | Descrição
+---------------           |---------------|---------------
+[001](db/001-basic/)      | basic         | exemplo básico de como usar classes persistentes com sqlite
+[002](db/002-foreignkey/) | foreignkey    | exemplo de como usar foreign key
 
 ### HTML5 e CSS3
 
