@@ -22,9 +22,9 @@ js                   | Projeto       | Descrição
 
 ### Vue
 
-vue                  | Projeto       | Descrição
----------------      |---------------|---------------
-[001](vue/v001/)     | vue           | projeto básico vue
+vue                      | Projeto       | Descrição
+---------------          |---------------|---------------
+[001](vue/001-basic/)    | vue           | projeto básico vue
 
 ### Python
 
