@@ -1,0 +1,11 @@
+instala o vue.js:
+npm install -g @vue/cli
+
+ver versão do vue.js para verificar se está funcionando:
+vue --version
+
+criar projeto vue:
+vue create <nome-do-projeto>
+
+rodar aplicação:
+npm run serve
