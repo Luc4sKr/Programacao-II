@@ -1,7 +1,7 @@
 <template>
     <div class="form-container">
         <div class="hide">
-            <form class="form" id="form-pessoa" action="post">
+            <form id="form-pessoa" action="post">
                 <h2>PESSOA</h2>
                 <div class="form-controller">
                     <label for="nome">Nome</label>
@@ -14,7 +14,7 @@
             </form>
         </div>
 
-        <div class="">
+        <div class="hide">
             <form class="form" id="form-celular" action="post">
                 <h2>CELULAR</h2>
                 <div class="form-controller">
@@ -36,8 +36,16 @@
 
 
 <script>
+const TABLE = Object.freeze({ Pessoa: 1, Celular: 2 });
+
 export default {
-    name: "FormsComponent"
+    name: "FormsComponent",
+
+    data() {
+        return {
+            
+        }
+    }
 }
 </script>
 
