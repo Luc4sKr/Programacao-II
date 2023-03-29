@@ -9,3 +9,9 @@ vue create <nome-do-projeto>
 
 rodar aplicação:
 npm run serve
+
+adiciona rotas automaticamente:
+vue add routes
+
+instala o pacode de rotas:
+npm install vue-router
