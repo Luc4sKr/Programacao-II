@@ -10,9 +10,10 @@ db                        | Projeto       | Descrição
 
 ### HTML5 e CSS3
 
-html-css                  | Projeto       | Descrição
----------------           |---------------|---------------
-[001](html-css/001-cards/)| cards         | listando cards com display grid
+html-css                    | Projeto       | Descrição
+---------------             |---------------|---------------
+[001](html-css/001-cards/)  | cards         | listando cards com display grid
+[002](html-css/002-modal/)  | moodal        | modal feito com a biblioteca AniJS
 
 ### JavaScript
 

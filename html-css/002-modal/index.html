@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Biblioteca css AniJS-->
+    <link rel="stylesheet" href="https://anijs.github.io/lib/anicollection/anicollection.css" />
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>AniJS</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <a href="#modal-one" class="btn btn-big" data-anijs="if:click, do: $addClass open, to:.modal;
+            if: click, on: .close, do: $removeClass open, to: $closest target | .modal">
+            Clique aqui
+        </a>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h2>Modal</h2>
+                <a href="#" class="btn-close close" aria-hidden="true">x</a>
+            </div>
+            <div class="modal-body">
+                <p>Aqui vai o texto do modal</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn close">Fechar</a>
+            </div>
+        </div>
+    </div>
+    <!-- /Modal -->
+
+    <!-- script do Ani JS-->
+    <script src="https://anijs.github.io/lib/anijs/anijs.js"></script>
+    <script src="https://anijs.github.io/lib/anijs/helpers/dom/anijs-helper-dom.js"></script>
+</body>
+
+</html>
