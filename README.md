@@ -22,9 +22,10 @@ js                   | Projeto       | Descrição
 
 ### Vue
 
-vue                      | Projeto       | Descrição
----------------          |---------------|---------------
-[001](vue/001-basic/)    | vue           | projeto básico vue
+vue                          | Projeto       | Descrição
+---------------              |---------------|---------------
+[001](vue/001-basic/)        | basic         | projeto básico vue
+[002](vue/002-data-binding/) | data binding  | projeto básico demonstrando como funciona o data binding
 
 ### Python
 
@@ -37,3 +38,4 @@ python                                       | Projeto                   | Descr
 [005](python/005-system-folders/)            | system-folder             | funcionalidades organizadas em pastas - config (bibliotecas), frontend (HTML+CSS+JS), modelo (classes), rotas
 [006](python/006-one-file-with-persistence/) | one file with persistence | arquivo com persistencia usando sqlite
 [007](python/007-foreignkey/)                | foreign key               | utilização de foreignkey para relação entre tabelas
+[008](python/008-python_with_vue/)           | < em desenvolvimento >    | < em desenvolvimento >
