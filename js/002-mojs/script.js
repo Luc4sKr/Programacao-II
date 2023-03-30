@@ -8,9 +8,7 @@ const bouncyCircle = new mojs.Shape({
   easing:       'elastic.inout',
   repeat:       5
 });
-
 document.body.appendChild(bouncyCircle.el);
-
 bouncyCircle.play();
 
 
