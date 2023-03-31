@@ -11,10 +11,11 @@ db                        | Projeto       | Descrição
 
 ### HTML5 e CSS3
 
-html-css                    | Projeto       | Descrição
----------------             |---------------|---------------
-[001](html-css/001-cards/)  | cards         | listando cards com display grid
-[002](html-css/002-modal/)  | modal         | modal feito com a biblioteca AniJS
+html-css                        | Projeto       | Descrição
+---------------                 |---------------|---------------
+[001](html-css/001-cards/)      | cards         | listando cards com display grid
+[002](html-css/002-modal/)      | modal         | modal feito com a biblioteca AniJS
+[003](html-css/003-not-found/)  | not-found     | página de erro 404 not found
 
 ### JavaScript
 
