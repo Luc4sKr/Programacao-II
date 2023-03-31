@@ -7,13 +7,14 @@ db                        | Projeto       | Descrição
 ---------------           |---------------|---------------
 [001](db/001-basic/)      | basic         | exemplo básico de como usar classes persistentes com sqlite
 [002](db/002-foreignkey/) | foreignkey    | exemplo de como usar foreign key
+[003](db/003-query/)      | query         | exemplo de como usar a query do sqlalchemy
 
 ### HTML5 e CSS3
 
 html-css                    | Projeto       | Descrição
 ---------------             |---------------|---------------
 [001](html-css/001-cards/)  | cards         | listando cards com display grid
-[002](html-css/002-modal/)  | moodal        | modal feito com a biblioteca AniJS
+[002](html-css/002-modal/)  | modal         | modal feito com a biblioteca AniJS
 
 ### JavaScript
 
