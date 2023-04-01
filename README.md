@@ -19,9 +19,10 @@ html-css                        | Projeto       | Descrição
 
 ### JavaScript
 
-js                   | Projeto       | Descrição
----------------      |---------------|---------------
-[001](js/001-jquery/)| jquery        | projeto simples de estudo com jquery
+js                               | Projeto                   | Descrição
+---------------                  |---------------            |---------------
+[001](js/001-password-generator/)| password generator        | gerador de senhas utilizando jquery
+[002](js/002-mojs/)              | mo.js                     | biblioteca javascript para criação de animações
 
 ### Vue
 
