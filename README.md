@@ -23,6 +23,7 @@ js                               | Projeto                   | Descrição
 ---------------                  |---------------            |---------------
 [001](js/001-password-generator/)| password generator        | gerador de senhas utilizando jquery
 [002](js/002-mojs/)              | mo.js                     | biblioteca javascript para criação de animações
+[003](js/003-color-flipper/      | color flipper)            | projeto para mudar o background da página com js
 
 ### Vue
 
