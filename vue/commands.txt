@@ -10,6 +10,12 @@ vue create <nome-do-projeto>
 rodar aplicação:
 npm run serve
 
+rodar a aplicação em modo de produção:
+npm run serve -- --mode production
+
+build da aplicação:
+npm run build
+
 adiciona rotas automaticamente:
 vue add routes
 

@@ -27,10 +27,11 @@ js                               | Projeto                   | Descrição
 
 ### Vue
 
-vue                          | Projeto       | Descrição
----------------              |---------------|---------------
-[001](vue/001-basic/)        | basic         | projeto básico vue
-[002](vue/002-data-binding/) | data binding  | projeto básico demonstrando como funciona o data binding
+vue                                  | Projeto       | Descrição
+---------------                      |---------------|---------------
+[001](vue/001-basic/)                | basic         | projeto básico vue
+[002](vue/002-data-binding/)         | data binding  | projeto básico demonstrando como funciona o data binding
+[003](vue/003-vue-cli-hello-world/)  | vue cli       | projeto criado com vue cli
 
 ### Python
 
