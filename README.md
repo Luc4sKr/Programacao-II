@@ -42,4 +42,4 @@ python                                       | Projeto                   | Descr
 [005](python/005-system-folders/)            | system-folder             | funcionalidades organizadas em pastas - config (bibliotecas), frontend (HTML+CSS+JS), modelo (classes), rotas
 [006](python/006-one-file-with-persistence/) | one file with persistence | arquivo com persistencia usando sqlite
 [007](python/007-foreignkey/)                | foreign key               | utilização de foreignkey para relação entre tabelas
-[008](python/008-python_with_vue/)           | < em desenvolvimento >    | < em desenvolvimento >
+[008](python/008-api-rest/)                  | api rest                  | projeto de api rest
