@@ -1,0 +1,14 @@
+{
+  "name": "002-custom-title-bar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Luc4s",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^23.2.1"
+  }
+}
