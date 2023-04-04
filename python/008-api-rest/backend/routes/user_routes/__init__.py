@@ -1,1 +1,0 @@
-__all__ = ["select_all", "select_by_id", "add", "update", "delete"]

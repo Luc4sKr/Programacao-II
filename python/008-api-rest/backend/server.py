@@ -1,5 +1,5 @@
 from configs.config import *
-from routes.user_routes import *
+from routes import *
 
 @app.route("/")
 def index():
