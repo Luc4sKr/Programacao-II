@@ -8,9 +8,12 @@
 
             <div class="list-group list-group-flush">
 
-                <FilmesListaIten tituloFilme="Vingadores: Guerra Infinita" />
-                <FilmesListaIten tituloFilme="Nada de Novo no Front" />
-                <FilmesListaIten tituloFilme="O Jogo da Imitação" />
+
+                <FilmesListaIten
+                    v-for="(filme, index) in filmes"
+                    :key="index" 
+                    :tituloFilme="filme" 
+                />
 
             </div>
         </div>
@@ -34,6 +37,17 @@ export default {
     components: {
         FilmesListaIten,
         FilmesListaItenInfo
+    },
+    data() {
+        return {
+            filmes: [
+                "Vingadores: Guerra Infinita",
+                "Nada de Novo no Front",
+                "O Jogo da Imitação",
+                "Deadpool 2"
+            ]
+        }
+
     }
 }
 </script>
