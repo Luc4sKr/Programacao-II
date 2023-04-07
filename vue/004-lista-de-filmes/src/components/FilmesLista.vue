@@ -10,9 +10,9 @@
 
 
                 <FilmesListaIten
-                    v-for="(filme, index) in filmes"
-                    :key="index" 
-                    :tituloFilme="filme" 
+                    v-for="filme in filmes"
+                    :key="filme.id" 
+                    v-bind="filme" 
                 />
 
             </div>
@@ -41,10 +41,10 @@ export default {
     data() {
         return {
             filmes: [
-                "Vingadores: Guerra Infinita",
-                "Nada de Novo no Front",
-                "O Jogo da Imitação",
-                "Deadpool 2"
+                { id: 1, titulo: "Vingadores: Guerra Infinita", ano: 2000 },
+                { id: 2, titulo:"Nada de Novo no Front", ano: 2000 },
+                { id: 3, titulo: "O Jogo da Imitação", ano: 2000 },
+                { id: 4, titulo: "Deadpool 2", ano: 2000 }
             ]
         }
 
