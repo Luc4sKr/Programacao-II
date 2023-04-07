@@ -1,28 +1,28 @@
 <template>
-  <div class="row">
+    <div class="row">
 
-    <!-- coluna 1 -->
-    <div class="col-8">
+        <!-- coluna 1 -->
+        <div class="col-8">
 
-      <h2>Filmes</h2>
+            <h2>Filmes</h2>
 
-      <div class="list-group list-group-flush">
+            <div class="list-group list-group-flush">
 
-        <FilmesListaIten/>
-        <FilmesListaIten/>
-        <FilmesListaIten/>
+                <FilmesListaIten tituloFilme="Vingadores: Guerra Infinita" />
+                <FilmesListaIten tituloFilme="Nada de Novo no Front" />
+                <FilmesListaIten tituloFilme="O Jogo da Imitação" />
 
-      </div>
+            </div>
+        </div>
+
+        <!-- coluna 2 -->
+        <div class="col-4">
+
+            <FilmesListaItenInfo />
+
+        </div>
+
     </div>
-
-    <!-- coluna 2 -->
-    <div class="col-4">
-
-      <FilmesListaItenInfo/>
-
-    </div>
-
-  </div>
 </template>
 
 <script>
@@ -31,9 +31,9 @@ import FilmesListaIten from './FilmesListaIten.vue'
 import FilmesListaItenInfo from './FilmesListaItenInfo.vue'
 
 export default {
-  components: {
-    FilmesListaIten,
-    FilmesListaItenInfo
-  }
+    components: {
+        FilmesListaIten,
+        FilmesListaItenInfo
+    }
 }
 </script>

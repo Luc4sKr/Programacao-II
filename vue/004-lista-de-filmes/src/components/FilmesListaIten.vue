@@ -1,6 +1,13 @@
 <template>
     <li class="list-group-item d-flex justify-content-between">
-        <span>Vingadores: Guerra Infinita</span>
-        <button class="btn btn-success">Editar</button>
+        <span>{{ tituloFilme }}</span>
+        <button class="btn btn-success">Selecionar</button>
     </li>
 </template>
+
+
+<script>
+export default {
+    props: ["tituloFilme"]
+}
+</script>
