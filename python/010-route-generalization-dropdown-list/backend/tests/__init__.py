@@ -1,0 +1,1 @@
+__all__=['testar_pessoa','testar_exame_realizado','testar_respirador']
