@@ -47,7 +47,6 @@ export default {
                 { id: 4, titulo: "Deadpool 2", ano: 2000 }
             ]
         }
-
     }
 }
 </script>
