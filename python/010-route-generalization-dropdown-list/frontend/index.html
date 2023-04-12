@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="_css/style.css">
+    <title>Web</title>
+</head>
+<body>
+    <h1>Dropdown list</h1>
+
+    <form id="form_exam_reali">
+        <div class="input-form-container">
+            <label for="pessoa_id">Pessoa:</label>
+            <select id="pessoa_id" name="pessoa_id"></select>
+        </div>
+        <div class="input-form-container">
+            <label for="exame_id">Exame:</label>
+            <select id="exame_id" name="exame_id"></select>
+        </div>
+        <div class="input-form-container">
+            <label for="data">Data:</label>
+            <input type="date" id="data" name="data">
+        </div>
+        <div class="input-form-container">
+            <label for="resultado">Resultado:</label>
+            <input type="resultado" id="resultado" name="resultado">
+        </div>
+        <div class="btn-container">
+            <button type="button" id="btn-incluir">Incluir</button>
+        </div>
+    </form>
+
+    <!-- inclusão da biblioteca jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <!-- script principal -->
+    <script src="_js/main.js" type="module"></script>
+</body>
+</html>
