@@ -7,3 +7,50 @@
 body {
     background-color: #fff;
 }
+
+.top-header {
+    background-color: #22222d;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    color: #fff;
+}
+
+.form-container {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    background-color: #22222d;
+    color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    min-width: 400px;
+}
+
+.input-form-container {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form label {
+    font-size: 20px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: end;
+}
+
+.btn-container button {
+    min-width: 100px;
+    height: 30px;
+}
