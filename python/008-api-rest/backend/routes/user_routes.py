@@ -9,6 +9,8 @@ def select_all_users():
     user_obj = User.query.all()
     user_json = [user.json() for user in user_obj]
 
+    print(user_json)
+
     return generate_response(200, "users", user_json)
 
 @app.route("/user/<id>", methods=["GET"])
