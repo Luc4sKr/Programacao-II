@@ -3,11 +3,12 @@
 
 ### DataBase
 
-db                        | Projeto       | Descrição
----------------           |---------------|---------------
-[001](db/001-basic/)      | basic         | exemplo básico de como usar classes persistentes com sqlite
-[002](db/002-foreignkey/) | foreignkey    | exemplo de como usar foreign key
-[003](db/003-query/)      | query         | exemplo de como usar a query do sqlalchemy
+db                                   | Projeto                  | Descrição
+---------------                      |---------------           |---------------
+[001](db/001-basic/)                 | basic                    | exemplo básico de como usar classes persistentes com sqlite
+[002](db/002-foreignkey/)            | foreignkey               | exemplo de como usar foreign key
+[003](db/003-query/)                 | query                    | exemplo de como usar a query do sqlalchemy
+[004](db/004-mysql-connection/)      | mysql connection         | conexão com mysql
 
 ### HTML5 e CSS3
 
@@ -45,3 +46,4 @@ python                                       | Projeto                   | Descr
 [006](python/006-one-file-with-persistence/) | one file with persistence | arquivo com persistencia usando sqlite
 [007](python/007-foreignkey/)                | foreign key               | utilização de foreignkey para relação entre tabelas
 [008](python/008-api-rest/)                  | api rest                  | projeto de api rest
+[009](python/009-route-generalization-dropdown-list/)                    | route generalization dropdown list                 | rotas generalizadas listar e incluir, listas suspensas
