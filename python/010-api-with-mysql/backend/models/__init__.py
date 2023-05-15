@@ -1,0 +1,1 @@
+all = ["person", "employee", "sector"]
