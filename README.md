@@ -34,16 +34,16 @@ vue                                  | Projeto       | Descrição
 [002](vue/002-data-binding/)         | data binding  | projeto básico demonstrando como funciona o data binding
 [003](vue/003-vue-cli-hello-world/)  | vue cli       | projeto criado com vue cli
 
-### Python
+### Web Api
 
-python                                       | Projeto                   | Descrição
----------------                              |---------------            |---------------
-[001](python/001-criacao-de-um-servidor-web/)| criacao-de-um-servidor-web| criação de um servidor básico com flask
-[002](python/002-server-with-class/)         | server-with-class         | criação de um servidor básico com listagem de pessoas (<code>class pessoa</code>) por meio de uma api
-[003](python/003-python_js/)                 | python_js                 | criação do backend em python e frontend com listagem de pessoas com js
-[004](python/004-post/)                      | post                      | adição do método post no backend
-[005](python/005-system-folders/)            | system-folder             | funcionalidades organizadas em pastas - config (bibliotecas), frontend (HTML+CSS+JS), modelo (classes), rotas
-[006](python/006-one-file-with-persistence/) | one file with persistence | arquivo com persistencia usando sqlite
-[007](python/007-foreignkey/)                | foreign key               | utilização de foreignkey para relação entre tabelas
-[008](python/008-api-rest/)                  | api rest                  | projeto de api rest
-[009](python/009-route-generalization-dropdown-list/)                    | route generalization dropdown list                 | rotas generalizadas listar e incluir, listas suspensas
+web-api                                       | Projeto                   | Descrição
+---------------                               |---------------            |---------------
+[001](web-api/001-criacao-de-um-servidor-web/)| criacao-de-um-servidor-web| criação de um servidor básico com flask
+[002](web-api/002-server-with-class/)         | server-with-class         | criação de um servidor básico com listagem de pessoas (<code>class pessoa</code>) por meio de uma api
+[003](web-api/003-python_js/)                 | python_js                 | criação do backend em python e frontend com listagem de pessoas com js
+[004](web-api/004-post/)                      | post                      | adição do método post no backend
+[005](web-api/005-system-folders/)            | system-folder             | funcionalidades organizadas em pastas - config (bibliotecas), frontend (HTML+CSS+JS), modelo (classes), rotas
+[006](web-api/006-one-file-with-persistence/) | one file with persistence | arquivo com persistencia usando sqlite
+[007](web-api/007-foreignkey/)                | foreign key               | utilização de foreignkey para relação entre tabelas
+[008](web-api/008-api-rest/)                  | api rest                  | projeto de api rest
+[009](web-api/009-route-generalization-dropdown-list/)                    | route generalization dropdown list                 | rotas generalizadas listar e incluir, listas suspensas
