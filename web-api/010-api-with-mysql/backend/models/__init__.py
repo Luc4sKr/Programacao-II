@@ -1,1 +1,1 @@
-all = ["person", "employee", "sector"]
+all = ["person", "employee", "departament", "employee_departament"]
