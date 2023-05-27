@@ -10,7 +10,6 @@ class Object(pygame.sprite.Sprite):
 
         self.rect = self.image.get_rect()
         self.rect.center = pos
-        self.pos = pygame.math.Vector2(pos)
 
 
 class AnimatedObject(Object):

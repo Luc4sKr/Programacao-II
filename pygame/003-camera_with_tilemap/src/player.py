@@ -8,8 +8,9 @@ class Player(AnimatedObject):
         super().__init__(animation, image, pos, scale)
 
         self.speed = speed
-        self.speed_vector = pygame.math.Vector2()
-        self.pos = pygame.math.Vector2()
+
+        self.direction = pygame.math.Vector2(0, 0)
+        self.pos = pygame.math.Vector2(pos)
 
         self.is_running = False
         self.invert_sprite = False
@@ -18,29 +19,31 @@ class Player(AnimatedObject):
         keys = pygame.key.get_pressed()
 
         if keys[pygame.K_w]:
-            self.speed_vector = (0, -1)
-            self.move()
-        if keys[pygame.K_s]:
-            self.speed_vector = (0, 1)
-            self.move()
+            self.direction.y = -1
+        elif keys[pygame.K_s]:
+            self.direction.y = 1
+        else:
+            self.direction.y = 0
 
         if keys[pygame.K_d]:
-            self.speed_vector = (1, 0)
-            self.move()
-        if keys[pygame.K_a]:
-            self.speed_vector = (-1, 0)
-            self.move()
+            self.direction.x = 1
+            self.invert_sprite = False
+        elif keys[pygame.K_a]:
+            self.direction.x = -1
+            self.invert_sprite = True
+        else:
+            self.direction.x = 0
 
-        
-        
+        self.move()
 
     def move(self):
         self.is_running = False
-        if self.pos.magnitude() != 0:
+        if self.direction.magnitude() != 0:
+            self.direction = self.direction.normalize()
             self.is_running = True
-        
-        self.pos.x += self.speed_vector[0] * self.speed
-        self.pos.y += self.speed_vector[1] * self.speed
+
+        self.pos.x += self.direction.x * self.speed
+        self.pos.y += self.direction.y * self.speed
 
         self.rect.center = self.pos
     
@@ -56,3 +59,5 @@ class Player(AnimatedObject):
     def update(self):
         self.input()
         self.animation_control()
+
+        print(self.direction.magnitude())
