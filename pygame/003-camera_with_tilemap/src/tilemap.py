@@ -22,7 +22,7 @@ class Tilemap:
         for y, row in enumerate(data):
             for x, tile in enumerate(row):
                 if int(tile) == 1:
-                    img_obj = Object(f"assets/tilesets/floor/{int(tile)}.png", ( x * 16, y * 16))
+                    img_obj = Object(f"assets/tilesets/floor/{int(tile)}.png", ( x * 16 * SCALE, y * 16 * SCALE), scale=SCALE)
                     self.all_sprites.add(img_obj)
 
     def open_file(self):
@@ -31,6 +31,7 @@ class Tilemap:
         with open(self.csv_file, newline="") as csvfile:
             reader = csv.reader(csvfile, delimiter=",")
             for x, row in enumerate(reader):
+                column_data = []
                 for y, tile in enumerate(row):
                     column_data.append(tile)
                 world_data.append(column_data)
