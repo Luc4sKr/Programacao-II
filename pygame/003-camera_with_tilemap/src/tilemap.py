@@ -1,56 +1,43 @@
 import pygame
-import random
+import csv
 
-# dimension of each tiles
-TILE_SIZE = 32
+from .config import *
+from .object import Object
 
-# texture of colors
-YELLOW  = (255, 255, 0)
-RED     = (255, 0, 0)
-BLUE    = (0 , 0, 255)
-GREEN   = (0, 255, 0)
-BROWN   = (160, 82, 45)
+class Tilemap:
+    def __init__(self, group) -> None:
 
-def create_texture(color):
-    image = pygame.Surface((TILE_SIZE, TILE_SIZE))
-    image.fill(color)
-    return image
+        self.all_sprites = group
 
-# 0x0 -> grass
-# 0xb -> dirt
-textures = {
-    0x0 : create_texture(GREEN),
-    0xb : create_texture(BROWN)
-}
+        self.csv_file = "assets/levels/level-1.csv"
+        self.floor_sprites = pygame.sprite.Group()
+        self.wall_sprites = pygame.sprite.Group()
 
-tiles = [0x0, 0xb]
+        self.create_map()
 
-MAP_POS = [0,0]
+    def create_map(self):
+        data = self.open_file()
+        print(data)
 
-# generate with tiles randomly
-def generate_map(width, height, tilesize = TILE_SIZE):
-    map_data = []
-    for i in range(height // tilesize):
-        map_data.append([])
-        for j in range(width // tilesize):
-            rand_index = random.randint(0,1)
-            # convert to hex from string value
-            tile = int(hex(tiles[rand_index]), 16)
-            map_data[i].append(tile)
-    return map_data
+        for y, row in enumerate(data):
+            for x, tile in enumerate(row):
+                if int(tile) == 1:
+                    img_obj = Object(f"assets/tilesets/floor/{int(tile)}.png", ( x * 16, y * 16))
+                    self.all_sprites.add(img_obj)
 
+    def open_file(self):
+        world_data = []
+        column_data = []
+        with open(self.csv_file, newline="") as csvfile:
+            reader = csv.reader(csvfile, delimiter=",")
+            for x, row in enumerate(reader):
+                for y, tile in enumerate(row):
+                    column_data.append(tile)
+                world_data.append(column_data)
+        return world_data
+    
+    def draw(self, screen):
+        self.floor_sprites.draw(screen)
 
-def draw_map(screen, map_data, camera = None):
-    MAP_HEIGHT = len(map_data)  
-    MAP_WIDTH = len(map_data[0])
-                    
-    if camera:
-        for row in range(MAP_HEIGHT):
-            for col in range(MAP_WIDTH):
-                screen.blit(textures[map_data[row][col]],
-                            (col*TILE_SIZE + camera.offset.x, row*TILE_SIZE + camera.offset.y))
-    else:
-        for row in range(MAP_HEIGHT):
-            for col in range(MAP_WIDTH):
-                screen.blit(textures[map_data[row][col]],
-                            (col*TILE_SIZE, row*TILE_SIZE))   
+    def update(self):
+        self.floor_sprites.update()

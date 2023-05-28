@@ -31,7 +31,7 @@ class Game:
         player_anim.add(PLAYER_RUN, player_run_spritesheet)
         self.player = Player(player_anim, 5, PLAYER_IMAGE_PATH, (100, 100), scale=SCALE)
 
-        self.map_data = generate_map(1024, 1024)
+        self.map = Tilemap(self.all_sprites)
         self.camera = Camera(self.player, 640, 480)
 
         self.all_sprites.add(self.player)
@@ -45,12 +45,13 @@ class Game:
 
     def update(self):
         self.camera.scroll()
+        self.map.update()
         self.all_sprites.update()
         pygame.display.flip()
 
     def draw(self):
         self.screen.fill((0, 0, 0))
-        draw_map(self.screen, self.map_data, self.camera)
+        self.map.draw(self.screen)
         
         for sprite in self.all_sprites:
             self.screen.blit(sprite.image, (sprite.rect.topleft + self.camera.offset))
@@ -60,8 +61,8 @@ class Game:
             self.clock.tick(FPS)
 
             self.check_events()
-            self.update()
             self.draw()
+            self.update()
 
 if __name__ == "__main__":
     game = Game()
