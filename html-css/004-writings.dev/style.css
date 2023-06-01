@@ -130,12 +130,12 @@ body {
     display: grid;
     margin: 50px 100px;
     grid-template-columns: 33% 33% 33%;
-    grid-template-rows: 320px;
 }
 
 .card-container {
     display: flex;
     justify-content: center;
+    margin: 15px 0;
 }
 
 .card {
@@ -152,13 +152,13 @@ body {
     justify-content: center;
 }
 
-.card-head > figure {
+.card-head>figure {
     width: 100%;
     height: 100%;
     margin: 20px;
 }
 
-.card-head > figure > img {
+.card-head>figure>img {
     width: 100%;
     height: 100%;
 }
@@ -167,20 +167,80 @@ body {
     margin: 20px;
 }
 
-.card-body > .card-title {
+.card-body>.card-title {
     margin-bottom: 10px;
+}
+
+.card-body>h3,
+p {
+    text-align: center;
 }
 
 .card-footer {
     margin: 20px;
     display: flex;
     align-items: center;
+    justify-content: space-around;
 }
 
-.card-footer > .card-post-date {
-    margin-right: 30px;
+.card-footer>span {
+    width: 120px;
 }
 
-.card-footer > .card-category {
-    margin-left: 30px;
+.pagination {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination>span {
+    font-size: 18px;
+    font-family: 'Recursive';
+    font-style: italic;
+    line-height: 30px;
+    color: #909090;
+    margin: 0 10px;
+}
+
+.pagination>span:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.pagination>.current {
+    color: #FF7575;
+}
+
+.page-footer {
+    height: 80px;
+    margin-top: 50px;
+    border-top: 1px solid #4D4D4D;
+}
+
+.footer-container {
+    margin: 20px 200px 0; 
+
+    display: flex;
+    align-items: center;
+}
+
+.footer-container>h5 {
+    font-family: 'Source Sans Pro';
+    font-size: 18px;
+    color: #FFF;
+}
+
+.box {
+    text-decoration: none;
+    color: #FFF;
+    background: #FF7575;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.box:hover {
+    cursor: pointer;
 }
