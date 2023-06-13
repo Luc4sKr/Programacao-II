@@ -44,12 +44,11 @@ class Player(AnimatedEntity):
             self.direction = self.direction.normalize()
             self.is_running = True
 
-        self.pos.x += self.direction.x * self.speed
-        self.pos.y += self.direction.y * self.speed
+        self.rect.x += self.direction.x * self.speed
+        self.rect.y += self.direction.y * self.speed
 
         super().wall_collision()
-
-        self.rect.center = self.pos
+        #self.rect.center = self.pos
 
 
     def animation_control(self):

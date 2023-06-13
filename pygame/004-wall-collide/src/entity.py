@@ -17,22 +17,25 @@ class Entity(pygame.sprite.Sprite):
         self.speed = speed
         self.dead = False
 
+        self.direction = pygame.math.Vector2(0, 0)
+
         self.hitbox = get_mask_rect(self.image, *self.rect.topleft)
 
     def wall_collision(self):
-        #self.hitbox = get_mask_rect(self.image, *self.rect.topleft)
-        #self.hitbox.midbottom = self.rect.midbottom
-
-        #test_rect = self.hitbox.move(*(self.speed, self.speed))  # Position after moving, change name later
         collide_points = (self.rect.midbottom, self.rect.bottomleft, self.rect.bottomright)
         for wall in self.game.map.wall_sprites:
             for point in collide_points:
                 if wall.rect.collidepoint(point):
-                    self.pos.x = point[0]
-                    self.pos.y = point[1] - 30
+                    if self.direction.x > 0: # moving right
+                        self.rect.right = wall.rect.left
+                    if self.direction.x < 0: # moving left
+                        self.rect.left = wall.rect.right
+                    
+                    if self.direction.y > 0: # moving down
+                        self.rect.bottom = wall.rect.top
+                    if self.direction.y < 0: # moving up
+                        self.rect.bottom = wall.rect.bottom
             
-
-        #print(f"{self.rect.center}, {self.hitbox.center}")
 
 
 class AnimatedEntity(Entity):
