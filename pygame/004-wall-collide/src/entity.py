@@ -21,20 +21,22 @@ class Entity(pygame.sprite.Sprite):
 
         self.hitbox = get_mask_rect(self.image, *self.rect.topleft)
 
-    def wall_collision(self):
+    def wall_collision(self, direction):
         collide_points = (self.rect.midbottom, self.rect.bottomleft, self.rect.bottomright)
         for wall in self.game.map.wall_sprites:
-            for point in collide_points:
-                if wall.rect.collidepoint(point):
+            
+            if wall.rect.colliderect(self.rect):
+                if direction == "horizontal":
                     if self.direction.x > 0: # moving right
                         self.rect.right = wall.rect.left
                     if self.direction.x < 0: # moving left
                         self.rect.left = wall.rect.right
-                    
+                
+                if direction == "vertical":
                     if self.direction.y > 0: # moving down
                         self.rect.bottom = wall.rect.top
                     if self.direction.y < 0: # moving up
-                        self.rect.bottom = wall.rect.bottom
+                        self.rect.top = wall.rect.bottom
             
 
 

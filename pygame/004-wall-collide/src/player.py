@@ -45,10 +45,10 @@ class Player(AnimatedEntity):
             self.is_running = True
 
         self.rect.x += self.direction.x * self.speed
-        self.rect.y += self.direction.y * self.speed
+        super().wall_collision("horizontal")
 
-        super().wall_collision()
-        #self.rect.center = self.pos
+        self.rect.y += self.direction.y * self.speed
+        super().wall_collision("vertical")
 
 
     def animation_control(self):
