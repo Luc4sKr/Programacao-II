@@ -1,1 +1,1 @@
-all = ["users"]
+__all__ = ["users"]
