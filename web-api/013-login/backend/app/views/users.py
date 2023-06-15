@@ -1,7 +1,7 @@
-from app import db
+from app import db, create_access_token
 from flask import request, jsonify
 from ..models.users import Users, user_schema, users_schema
-from werkzeug.security import generate_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
 
 def post_user():
     data = request.get_json()
@@ -17,7 +17,6 @@ def post_user():
 
     except:
         return jsonify({"message": "unable to create", "data": {}}), 500
-    
 
 def update_user(id):
     data = request.get_json()
@@ -42,7 +41,6 @@ def update_user(id):
     except:
         return jsonify({"message": "unable to update", "data": {}}), 500
     
-
 def get_users():
     users = Users.query.all()
 
@@ -51,7 +49,6 @@ def get_users():
         return jsonify({"message": "successfully fetched", "data": result})
     
     return jsonify({"message": "nothing found", "data": {}})
-
 
 def get_user(id):
     user = Users.query.get(id)
@@ -62,8 +59,8 @@ def get_user(id):
 
     return jsonify({"message": "user don't exist", "data": {}}), 404
 
-
 def delete_user(id):
+
     user = Users.query.get(id)
 
     if not user:
@@ -78,3 +75,17 @@ def delete_user(id):
         return jsonify({"message": "seccessfully deleted", "data": result}), 200
     except:
         return jsonify({"message": "unable to create", "data": {}}), 500
+    
+def login():
+    data = request.get_json()
+    username = data["username"]
+    password = data["password"]
+
+    find_user = Users.query.filter_by(username=username).first()
+    check_password = check_password_hash(generate_password_hash(password), password)
+
+    if find_user is None or check_password == False:
+        return jsonify({"message": "incorrect username or password", "data": {}}), 404
+
+    access_token = create_access_token(identity=username)
+    return jsonify({"message": "successfully logged in", "data": access_token})
