@@ -60,7 +60,6 @@ def get_user(id):
     return jsonify({"message": "user don't exist", "data": {}}), 404
 
 def delete_user(id):
-
     user = Users.query.get(id)
 
     if not user:
@@ -75,17 +74,9 @@ def delete_user(id):
         return jsonify({"message": "seccessfully deleted", "data": result}), 200
     except:
         return jsonify({"message": "unable to create", "data": {}}), 500
-    
-def login():
-    data = request.get_json()
-    username = data["username"]
-    password = data["password"]
 
-    find_user = Users.query.filter_by(username=username).first()
-    check_password = check_password_hash(generate_password_hash(password), password)
-
-    if find_user is None or check_password == False:
-        return jsonify({"message": "incorrect username or password", "data": {}}), 404
-
-    access_token = create_access_token(identity=username)
-    return jsonify({"message": "successfully logged in", "data": access_token})
+def user_by_username(username):
+    try:
+        return Users.query.filter(Users.username == username).one()
+    except:
+        return None

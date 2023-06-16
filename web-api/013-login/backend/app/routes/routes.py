@@ -28,6 +28,3 @@ def get_user(id):
 def delete_user(id):
     return users.delete_user(id)
 
-@app.route("/users/login", methods=["POST"])
-def login():
-    return users.login()
