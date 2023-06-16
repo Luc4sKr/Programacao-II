@@ -1,7 +1,7 @@
 from flask import jsonify
 
 from app import app
-from ..views import users
+from ..views import users, helper
 
 @app.route("/", methods=["GET"])
 def index():
@@ -28,3 +28,6 @@ def get_user(id):
 def delete_user(id):
     return users.delete_user(id)
 
+@app.route("/auth", methods=["POST"])
+def authenticate():
+    return helper.auth()
