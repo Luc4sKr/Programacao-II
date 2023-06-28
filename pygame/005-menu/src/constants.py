@@ -1,0 +1,14 @@
+WIDTH, HEIGHT = 854, 480
+HALF_WIDTH = WIDTH // 2
+HALF_HEIGHT = HEIGHT // 2
+RESOLUTION = (WIDTH, HEIGHT)
+SCALE = 3
+FPS = 60
+
+# Fonts
+PIXEL_FONT = "assets/fonts/pixelmix.ttf"
+TITLE_FONT = 64
+
+# Colors
+BLACK = (0, 0, 0)
+WHITE = (255, 255, 255)
