@@ -1,6 +1,8 @@
 import pygame, sys
 from abc import ABC
 
+from .button import Button
+
 from .constants import * 
 from .utils import *
 
@@ -44,6 +46,8 @@ class MainMenu(Menu):
 
         draw_text(self.game.screen, "Dungeon Warriors", TITLE_FONT, WHITE, HALF_WIDTH, 50)
         draw_text(self.game.screen, "Press SPACE to play", 16, WHITE, HALF_WIDTH, 440)
+
+        btn1 = Button(self.game.screen, HALF_WIDTH - 50, 200, 100, 50, "TESTE")
 
     def update(self):
         super().update()

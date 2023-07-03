@@ -15,8 +15,7 @@ class Game:
         self.game_over = False
         self.main_menu = MainMenu(self)
 
-
-    def x(self):
+    def running(self):
         self.main_menu.run()
 
 
