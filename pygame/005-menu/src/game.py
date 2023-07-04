@@ -16,12 +16,13 @@ class Game:
         self.game_over = False
         self.main_menu = MainMenu(self)
 
-    def running(self):
+    def start(self):
         self.main_menu.run()
-
 
     def new_game(self):
         self.game_over = False
+
+        self.run()
 
     def check_events(self):
         for event in pygame.event.get():
@@ -37,9 +38,7 @@ class Game:
     def draw(self):
         self.screen.fill(BLACK)
 
-    def run(self):
-        self.new_game()
-        
+    def run(self):        
         while not self.game_over:
             self.clock.tick(FPS)
 
