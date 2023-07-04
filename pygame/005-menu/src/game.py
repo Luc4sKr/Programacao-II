@@ -11,6 +11,7 @@ class Game:
 
         self.screen = pygame.display.set_mode(RESOLUTION)
         pygame.display.set_caption("Dungeon Warriors")
+        
         self.clock = pygame.time.Clock()
         self.game_over = False
         self.main_menu = MainMenu(self)

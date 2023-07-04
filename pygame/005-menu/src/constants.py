@@ -12,3 +12,4 @@ TITLE_FONT = 64
 # Colors
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
+YELLOW = (255, 255, 0)

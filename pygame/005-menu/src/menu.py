@@ -41,19 +41,26 @@ class MainMenu(Menu):
     def __init__(self, game) -> None:
         super().__init__(game)
 
+        self.btn1 = Button("TESTE", HALF_WIDTH - 50, 200, 100, 50, callback_function=self.teste)
+
     def draw(self):
         super().draw()
 
         draw_text(self.game.screen, "Dungeon Warriors", TITLE_FONT, WHITE, HALF_WIDTH, 50)
         draw_text(self.game.screen, "Press SPACE to play", 16, WHITE, HALF_WIDTH, 440)
 
-        btn1 = Button(self.game.screen, HALF_WIDTH - 50, 200, 100, 50, "TESTE")
+        self.btn1.draw(self.game.screen)
 
     def update(self):
         super().update()
+
+        self.btn1.update()
 
     def menu_events(self, event):
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE:
                 self.show = False
                 self.game.run()
+
+    def teste(self):
+        print("teste")

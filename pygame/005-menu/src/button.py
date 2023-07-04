@@ -4,26 +4,60 @@ from .utils import *
 from .constants import *
 
 class Button:
-    def __init__(self, screen, left, top, width, height, text, font_size=20, button_color=BLACK, font_color=WHITE, border_color=WHITE):
-        button_border = pygame.Rect(int(left - 2), int(top - 2), int(width + 4), int(height + 4))
-        button = pygame.Rect(int(left), int(top), int(width), int(height))
+    def __init__(self, text, left, top, width, height, callback_function=None, font_size=20, button_color=BLACK, font_color=WHITE, border_color=WHITE, hover_border_color=YELLOW):
+        self.left = left
+        self.top = top
+        self.width = width
+        self.height = height
+        self.text = text
+        self.font_size = font_size
+        self.button_color = button_color
+        self.base_font_color = font_color
+        self.font_color = font_color
+        self.base_border_color = border_color
+        self.border_color = border_color
+        self.hover_border_color = hover_border_color
+
+        self.button_border = pygame.Rect(int(self.left - 2), int(self.top - 2), int(self.width + 4), int(self.height + 4))
+        self.button = pygame.Rect(int(self.left), int(self.top), int(self.width), int(self.height))
+
+        self.click = False
+        self.pressed = False
+
+        self.callback_function = callback_function
+
+
+    def draw(self, screen):
+        pygame.draw.rect(screen, self.border_color, self.button_border)
+        pygame.draw.rect(screen, self.button_color, self.button)
+
+        draw_text(screen, self.text, self.font_size, self.font_color, self.left + (self.width / 2), self.top + (self.height / 2))
+
+
+    def update(self):
+        self.mouse_pos = pygame.mouse.get_pos()
+        self.click = pygame.mouse.get_pressed()[0]
+
+        self.check_hover()
+        self.check_click()
+
+
+    def check_click(self):
+        if self.check_hover() and self.click and not self.pressed:
+            if self.callback_function:
+                self.callback_function()
+            self.pressed = True
         
-        pygame.draw.rect(screen, border_color, button_border)
-        pygame.draw.rect(screen, button_color, button)
-
-        draw_text(screen, text, font_size, font_color, left + (width / 2), top + (height / 2))
+        self.pressed = False
 
 
-
-"""
-
-@staticmethod
-def draw_button(screen, left, top, width, height, text, font_size=20, button_color=Const.BLACK, font_color=Const.WHITE, border_color=Const.WHITE):
-    button_border = pygame.Rect(int(left - 2), int(top - 2), int(width + 4), int(height + 4))
-    button = pygame.Rect(int(left), int(top), int(width), int(height))
-    pygame.draw.rect(screen, border_color, button_border)
-    pygame.draw.rect(screen, button_color, button)
-    Draw_util.draw_text(screen, text, font_size, font_color, left + (width / 2), top + (height / 2))
-    return button
-
-"""
+    def check_hover(self):
+        if self.button.collidepoint(self.mouse_pos):
+            self.border_color = self.hover_border_color
+            self.font_color = self.hover_border_color
+            return True
+        
+        self.border_color = self.base_border_color
+        self.font_color = self.base_font_color
+        return False
+    
