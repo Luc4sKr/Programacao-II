@@ -9,9 +9,7 @@ from .utils import *
 class Menu(ABC):
     def __init__(self, game) -> None:
         self.game = game
-
         self.show_menu = True
-        self.mouse_click = False
 
     def run(self):
         while self.show_menu:

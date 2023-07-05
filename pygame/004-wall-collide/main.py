@@ -18,7 +18,7 @@ class Game:
         self.clock = pygame.time.Clock()
         self.game_over = False
 
-        self.new_game()
+ 
 
     def new_game(self):
         self.all_sprites = pygame.sprite.Group()
