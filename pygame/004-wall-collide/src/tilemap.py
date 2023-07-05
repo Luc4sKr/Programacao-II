@@ -15,7 +15,6 @@ class Tile(pygame.sprite.Sprite):
 
         self.rect = self.image.get_rect()
         self.rect.x, self.rect.y = x, y
-        self.hitbox = get_mask_rect(self.image, *self.rect.topleft)
 
 
 class Tilemap:

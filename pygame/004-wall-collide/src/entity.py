@@ -19,10 +19,7 @@ class Entity(pygame.sprite.Sprite):
 
         self.direction = pygame.math.Vector2(0, 0)
 
-        self.hitbox = get_mask_rect(self.image, *self.rect.topleft)
-
     def wall_collision(self, direction):
-        collide_points = (self.rect.midbottom, self.rect.bottomleft, self.rect.bottomright)
         for wall in self.game.map.wall_sprites:
             
             if wall.rect.colliderect(self.rect):
