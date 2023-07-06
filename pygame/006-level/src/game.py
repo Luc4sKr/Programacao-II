@@ -3,6 +3,8 @@ import pygame, sys
 from .constants import *
 from .menu import MainMenu
 
+from .objectHandler import ObjectHandler
+
 class Game:
     def __init__(self) -> None:
         pygame.init()
@@ -21,6 +23,7 @@ class Game:
 
     def new_game(self):
         self.game_over = False
+        self.object_handler = ObjectHandler()
         
         # carregar as sprites, grupos, objetos, player, camera, level...
         # object handler
@@ -45,7 +48,9 @@ class Game:
 
     def update(self):
         pygame.display.flip()
+        self.object_handler.update()
 
 
     def draw(self):
-        self.screen.fill(BLACK) 
+        self.screen.fill(BLACK)
+        self.object_handler.draw(self.screen)
