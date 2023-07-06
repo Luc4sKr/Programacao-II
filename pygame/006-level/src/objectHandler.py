@@ -12,6 +12,7 @@ class ObjectHandler:
         self.all_sprites = pygame.sprite.Group()
         self.wall_sprites = pygame.sprite.Group()
         self.floor_sprites = pygame.sprite.Group()
+        self.objects_sprites = pygame.sprite.Group()
 
         self.load_player()
         self.load_camera()
@@ -35,7 +36,6 @@ class ObjectHandler:
 
     def update(self):
         self.all_sprites.update()
-        self.player_group.update()
         self.camera.scroll()
 
 
@@ -44,6 +44,9 @@ class ObjectHandler:
             screen.blit(sprite.image, (sprite.rect.topleft + self.camera.offset)) 
 
         for sprite in self.floor_sprites:
+            screen.blit(sprite.image, (sprite.rect.topleft + self.camera.offset))
+
+        for sprite in self.objects_sprites:
             screen.blit(sprite.image, (sprite.rect.topleft + self.camera.offset))
         
         for sprite in self.all_sprites:

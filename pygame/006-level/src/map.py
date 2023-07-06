@@ -30,6 +30,9 @@ class Map:
                         if file == "floor":
                             self.obj_handler.floor_sprites.add(tile)
 
+                        if file == "objects":
+                            self.obj_handler.objects_sprites.add(tile)
+
 
     def load_tiles(self):
         files = {}

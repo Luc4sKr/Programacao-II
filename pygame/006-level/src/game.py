@@ -1,8 +1,9 @@
 import pygame, sys
 
 from .constants import *
-from .menu import MainMenu
+from .utils import *
 
+from .menu import MainMenu
 from .objectHandler import ObjectHandler
 from .map import Map
 
@@ -30,6 +31,7 @@ class Game:
 
         self.run()
 
+
     def run(self):        
         while not self.game_over:
             self.clock.tick(FPS)
@@ -54,3 +56,7 @@ class Game:
     def draw(self):
         self.screen.fill(BLACK)
         self.object_handler.draw(self.screen)
+
+        draw_text(self.screen, f"FPS: {self.clock.get_fps():.2f}", 16, WHITE, 5, 5, topleft=True)
+
+        
