@@ -36,7 +36,6 @@ class Entity(pygame.sprite.Sprite):
                         self.rect.top = wall.rect.bottom
             
 
-
 class AnimatedEntity(Entity):
     def __init__(self, game, animation, image_path, pos: tuple, speed, scale=1) -> None:
         super().__init__(game, image_path, pos, speed, scale)

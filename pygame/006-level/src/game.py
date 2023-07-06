@@ -4,6 +4,8 @@ from .constants import *
 from .menu import MainMenu
 
 from .objectHandler import ObjectHandler
+from .map import Map
+
 
 class Game:
     def __init__(self) -> None:
@@ -24,9 +26,7 @@ class Game:
     def new_game(self):
         self.game_over = False
         self.object_handler = ObjectHandler()
-        
-        # carregar as sprites, grupos, objetos, player, camera, level...
-        # object handler
+        self.map = Map()
 
         self.run()
 
