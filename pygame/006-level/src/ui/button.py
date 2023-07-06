@@ -26,30 +26,27 @@ class Button:
 
         self.callback_function = callback_function
 
-
     def draw(self, screen):
         pygame.draw.rect(screen, self.border_color, self.button_border)
         pygame.draw.rect(screen, self.button_color, self.button)
 
         draw_text(screen, self.text, self.font_size, self.font_color, self.left + (self.width / 2), self.top + (self.height / 2))
 
-
     def update(self):
         self.mouse_pos = pygame.mouse.get_pos()
+
         self.click = pygame.mouse.get_pressed()[0]
 
         self.check_hover()
         self.check_click()
 
-
     def check_click(self):
-        if self.check_hover() and self.click and not self.pressed:
+        if self.check_hover() and self.click:
             if self.callback_function:
                 self.callback_function()
             self.pressed = True
-        
+        self.click = False
         self.pressed = False
-
 
     def check_hover(self):
         if self.button.collidepoint(self.mouse_pos):

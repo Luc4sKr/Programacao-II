@@ -24,10 +24,10 @@ class Game:
         self.main_menu.run()
 
 
-    def new_game(self):
+    def new_game(self, map):
         self.game_over = False
         self.object_handler = ObjectHandler()
-        self.map = Map(self.object_handler, 1)
+        self.map = Map(self.object_handler, map)
 
         self.run()
 
