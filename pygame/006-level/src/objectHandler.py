@@ -35,12 +35,21 @@ class ObjectHandler:
 
     def update(self):
         self.all_sprites.update()
+        self.player_group.update()
         self.camera.scroll()
 
 
     def draw(self, screen):
+        for sprite in self.wall_sprites:
+            screen.blit(sprite.image, (sprite.rect.topleft + self.camera.offset)) 
+
+        for sprite in self.floor_sprites:
+            screen.blit(sprite.image, (sprite.rect.topleft + self.camera.offset))
+        
         for sprite in self.all_sprites:
             screen.blit(sprite.image, (sprite.rect.topleft + self.camera.offset))
+        
+        
 
     
     
