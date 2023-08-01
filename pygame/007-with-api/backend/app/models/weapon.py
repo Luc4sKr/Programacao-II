@@ -6,8 +6,8 @@ class Weapon(db.Model):
     image_path = db.Column(db.String(120), nullable=False)
     damage = db.Column(db.Integer, nullable=False)
 
-    def __init__(self, iamge_path, damage):
-        self.image_path = iamge_path
+    def __init__(self, image_path, damage):
+        self.image_path = image_path
         self.damage = damage
 
 

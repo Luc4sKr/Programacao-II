@@ -16,3 +16,5 @@ JWT_ACCESS_TOKEN_EXPIRES = timedelta(minutes=10)
 
 SQLALCHEMY_DATABASE_URI = f"sqlite:///{db_file}"
 SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+UPLOAD_FOLDER = f"{os.getcwd()}/upload"
