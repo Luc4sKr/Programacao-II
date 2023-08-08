@@ -1,7 +1,7 @@
 import datetime
 
-from app import db, ma
-from .weapon import Weapon
+from app import db, ma, fields
+from .weapon import Weapon, WeaponSchema
 
 
 class Player(db.Model):
@@ -15,13 +15,16 @@ class Player(db.Model):
     coins = db.Column(db.Integer, nullable=False)
 
     weapon_id = db.Column(db.Integer, db.ForeignKey(Weapon.id), nullable=False)
-    weapon = db.relationship("Weapon")
+    weapon = db.relationship("Weapon", backref="weapon")
 
 
-class UserSchema(ma.Schema):
+class PlayerSchema(ma.Schema):
     class Meta:
-        fields = ("id", "username", "email", "password", "created_on", "max_score", "coins")
+        model = Player
+        #fields = ("id", "username", "email", "password", "created_on", "max_score", "coins", "weapon_id")
+    
+    username = fields.Str()
+    weapon = fields.Nested(WeaponSchema())
 
-
-player_schema = UserSchema()
-players_schema = UserSchema(many=True)
+player_schema = PlayerSchema()
+players_schema = PlayerSchema(many=True)

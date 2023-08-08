@@ -3,16 +3,13 @@ from app import db, ma
 
 class Weapon(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    image_path = db.Column(db.String(120), nullable=False)
+    image_path = db.Column(db.String(120), unique=True, nullable=False)
     damage = db.Column(db.Integer, nullable=False)
-
-    def __init__(self, image_path, damage):
-        self.image_path = image_path
-        self.damage = damage
 
 
 class WeaponSchema(ma.Schema):
     class Meta:
+        model = Weapon
         filds = ("id", "image_path", "damage")
 
 

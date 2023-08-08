@@ -2,6 +2,7 @@ from flask import Flask
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
+from marshmallow import fields
 
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import get_jwt_identity
